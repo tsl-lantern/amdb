@@ -1,4 +1,8 @@
 Amdb::Application.routes.draw do
+  get '/session/new' => 'Sessions#new', as: 'new_session'
+  post '/session' => 'Sessions#create', as: 'session'
+  delete '/session' => 'Sessions#destroy'
+
   # Routes for the User resource:
   # CREATE
   get '/users/new', controller: 'users', action: 'new', as: 'new_user'
