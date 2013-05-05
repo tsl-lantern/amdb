@@ -15,8 +15,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new
     @user.username = params[:username]
-    @user.password_digest = params[:password_digest]
-    
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
+
     if @user.save
             redirect_to users_url
           else
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     @user.username = params[:username]
     @user.password_digest = params[:password_digest]
-    
+
     if @user.save
             redirect_to users_url
           else
