@@ -1,4 +1,6 @@
 Amdb::Application.routes.draw do
+  root to: 'Movies#index'
+
   # Routes for the Role resource:
   # CREATE
   get '/roles/new', controller: 'roles', action: 'new', as: 'new_role'
