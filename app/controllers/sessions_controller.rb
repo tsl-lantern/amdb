@@ -14,5 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    reset_session
+    redirect_to root_url, notice: "Signed out successfully."
   end
 end
