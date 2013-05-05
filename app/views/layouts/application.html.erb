@@ -8,7 +8,22 @@
 </head>
 <body>
 
-<%= yield %>
+  <nav>
+    <%= link_to "Home", root_url %>
+    <%= link_to "Directors", directors_url %> |
+    <%= link_to "Movies", movies_url %> |
+    <%= link_to "Actors", actors_url %> |
+    <%= link_to "Roles", roles_url %> |
+    <% if session[:user_id].blank? %>
+      <%= link_to "Sign In", new_session_url %>
+    <% else %>
+      <%= link_to "Sign Out", session_url, method: 'delete' %>
+    <% end %>
+  </nav>
+
+  <p><%= notice %></p>
+
+  <%= yield %>
 
 </body>
 </html>
