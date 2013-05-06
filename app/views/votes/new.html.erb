@@ -6,15 +6,15 @@
 
   <div>
     <%= label_tag :user_id %><br />
-    <%= number_field_tag :user_id %>
+    <%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :username) %>
   </div>
 
     <div>
     <%= label_tag :movie_id %><br />
-    <%= number_field_tag :movie_id %>
+    <%= select_tag :movie_id, options_from_collection_for_select(Movie.all, :id, :title) %>
   </div>
 
-  
+
   <div>
     <%= submit_tag "Create Vote" %>
   </div>
