@@ -19,8 +19,8 @@ class UsersController < ApplicationController
     @user.password_confirmation = params[:password_confirmation]
 
     if @user.save
-            redirect_to users_url
-          else
+      redirect_to users_url
+    else
       render 'new'
     end
   end
@@ -35,8 +35,8 @@ class UsersController < ApplicationController
     @user.password_digest = params[:password_digest]
 
     if @user.save
-            redirect_to users_url
-          else
+      redirect_to users_url
+    else
       render 'edit'
     end
   end
@@ -44,6 +44,6 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find_by_id(params[:id])
     @user.destroy
-        redirect_to users_url
-      end
+    redirect_to users_url
+  end
 end

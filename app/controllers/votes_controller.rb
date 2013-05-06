@@ -26,8 +26,8 @@ class VotesController < ApplicationController
     @vote.movie_id = params[:movie_id]
 
     if @vote.save
-            redirect_to movies_url
-          else
+      redirect_to movies_url
+    else
       render 'new'
     end
   end
@@ -63,6 +63,6 @@ class VotesController < ApplicationController
       return
     end
     @vote.destroy
-        redirect_to votes_url
-      end
+    redirect_to votes_url
+  end
 end

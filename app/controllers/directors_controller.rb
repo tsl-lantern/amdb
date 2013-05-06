@@ -16,10 +16,10 @@ class DirectorsController < ApplicationController
     @director = Director.new
     @director.name = params[:name]
     @director.dob = params[:dob]
-    
+
     if @director.save
-            redirect_to directors_url
-          else
+      redirect_to directors_url
+    else
       render 'new'
     end
   end
@@ -32,10 +32,10 @@ class DirectorsController < ApplicationController
     @director = Director.find_by_id(params[:id])
     @director.name = params[:name]
     @director.dob = params[:dob]
-    
+
     if @director.save
-            redirect_to directors_url
-          else
+      redirect_to directors_url
+    else
       render 'edit'
     end
   end
@@ -43,6 +43,6 @@ class DirectorsController < ApplicationController
   def destroy
     @director = Director.find_by_id(params[:id])
     @director.destroy
-        redirect_to directors_url
-      end
+    redirect_to directors_url
+  end
 end

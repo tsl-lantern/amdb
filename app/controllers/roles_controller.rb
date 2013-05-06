@@ -17,10 +17,10 @@ class RolesController < ApplicationController
     @role.character_name = params[:character_name]
     @role.movie_id = params[:movie_id]
     @role.actor_id = params[:actor_id]
-    
+
     if @role.save
-            redirect_to roles_url
-          else
+      redirect_to roles_url
+    else
       render 'new'
     end
   end
@@ -34,10 +34,10 @@ class RolesController < ApplicationController
     @role.character_name = params[:character_name]
     @role.movie_id = params[:movie_id]
     @role.actor_id = params[:actor_id]
-    
+
     if @role.save
-            redirect_to roles_url
-          else
+      redirect_to roles_url
+    else
       render 'edit'
     end
   end
@@ -45,6 +45,6 @@ class RolesController < ApplicationController
   def destroy
     @role = Role.find_by_id(params[:id])
     @role.destroy
-        redirect_to roles_url
-      end
+    redirect_to roles_url
+  end
 end

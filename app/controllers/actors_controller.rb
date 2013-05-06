@@ -16,10 +16,10 @@ class ActorsController < ApplicationController
     @actor = Actor.new
     @actor.name = params[:name]
     @actor.dob = params[:dob]
-    
+
     if @actor.save
-            redirect_to actors_url
-          else
+      redirect_to actors_url
+    else
       render 'new'
     end
   end
@@ -32,10 +32,10 @@ class ActorsController < ApplicationController
     @actor = Actor.find_by_id(params[:id])
     @actor.name = params[:name]
     @actor.dob = params[:dob]
-    
+
     if @actor.save
-            redirect_to actors_url
-          else
+      redirect_to actors_url
+    else
       render 'edit'
     end
   end
@@ -43,6 +43,6 @@ class ActorsController < ApplicationController
   def destroy
     @actor = Actor.find_by_id(params[:id])
     @actor.destroy
-        redirect_to actors_url
-      end
+    redirect_to actors_url
+  end
 end
