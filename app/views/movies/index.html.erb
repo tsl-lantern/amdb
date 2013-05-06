@@ -8,6 +8,7 @@
       <th>Title</th>
       <th>Year</th>
       <th>Director</th>
+      <th>Votes</th>
       <th></th>
       <th></th>
       <th></th>
@@ -21,6 +22,7 @@
       <td><%= movie.title %></td>
       <td><%= movie.year %></td>
       <td><%= movie.director.name %></td>
+      <td><%= movie.votes.count %></td>
       <td>
         <% if session[:user_id].present? %>
           <%= form_tag votes_url do %>
