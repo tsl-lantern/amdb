@@ -5,6 +5,6 @@ class Movie < ActiveRecord::Base
   has_many :votes
   has_many :users, through: :votes
 
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: { scope: :year }
   validates :director, presence: true
 end
