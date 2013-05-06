@@ -15,4 +15,11 @@
   <%= @movie.director.name %>
 </p>
 
+<% if session[:user_id].present? %>
+  <%= form_tag votes_url do %>
+    <%= hidden_field_tag :user_id, session[:user_id] %>
+    <%= hidden_field_tag :movie_id, @movie.id %>
 
+    <%= submit_tag "Vote for this movie" %>
+  <% end %>
+<% end %>
