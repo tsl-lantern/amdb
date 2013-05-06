@@ -11,6 +11,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -20,7 +21,16 @@
       <td><%= movie.title %></td>
       <td><%= movie.year %></td>
       <td><%= movie.director.name %></td>
+      <td>
+        <% if session[:user_id].present? %>
+          <%= form_tag votes_url do %>
+            <%= hidden_field_tag :movie_id, movie.id %>
+            <%= hidden_field_tag :user_id, session[:user_id] %>
 
+            <%= submit_tag "Upvote" %>
+          <% end %>
+        <% end %>
+      </td>
       <td><%= link_to 'Show', movie_url(movie) %></td>
       <td><%= link_to 'Edit', edit_movie_url(movie) %></td>
       <td><%= link_to 'Destroy', movie_url(movie), method: 'delete', data: { confirm: "Do you really want to delete this movie?" } %></td>
