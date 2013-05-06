@@ -10,4 +10,11 @@
   <%= @user.password_digest %>
 </p>
 
-
+<p>
+  <b>Votes (<%= @user.votes.count %>):</b>
+  <ul>
+    <% @user.movies.each do |movies| %>
+      <li><%= movies.title %></li>
+    <% end %>
+  </ul>
+</p>
